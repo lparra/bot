@@ -1,10 +1,7 @@
 // https://discord.js.org/#/
 const discord = require('discord.js');
-const { get } = require('http');
 const client = new discord.Client();
-const path = require('path');
-const filePath = path.join(__dirname, '../config.json');
-const config = require(filePath);
+const { token, prefix } = require('../config.json');
 const fetch = require('node-fetch');
 
 
@@ -14,10 +11,9 @@ client.on('ready', () => {
 });
 
 client.on('message', async message => {
-  if(message.author.bot) return;
-  if(!message.content.startsWith(config.prefix)) return;
+  if(!message.content.startsWith(prefix) || (message.author.bot)) return;
 
-  const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
+  const args = message.content.slice(prefix.length).trim().split(/ +/g);
   const command = args.shift().toLowerCase();
   
   if(command === 'ping') {
@@ -45,7 +41,6 @@ client.on('message', async message => {
     const joke = await getJoke()
     message.channel.send(`${joke.setup}... ${joke.punchline}`)
   }
-  
 });
 
-client.login(config.token);
+client.login(token);
