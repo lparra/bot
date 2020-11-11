@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lparra/discordjs-bot.git"
+    "url": "git+https://github.com/lsprr/discordjs-bot.git"
   },
   "author": "luis parra",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/lparra/discordjs-bot/issues"
+    "url": "https://github.com/lsprr/discordjs-bot/issues"
   },
-  "homepage": "https://github.com/lparra/discordjs-bot#readme",
+  "homepage": "https://github.com/lsprr/discordjs-bot#readme",
   "dependencies": {
     "discord.js": "^12.3.1",
     "dotenv": "^8.2.0",
